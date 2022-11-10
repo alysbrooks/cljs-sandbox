@@ -4,8 +4,9 @@
   "src/main"
   "src/test"]
 
- :dependencies
- []
+
+ :deps {:aliases [:cljs]}
+;; :dependencies []
 
  :dev-http
  {8020 "public"}
