@@ -17,7 +17,7 @@
   (js/console.log "fetch")
   (fetch/get "www.example.com" {:signal (.-signal controller)})
    
-  (js/console.log (.abort controller))
+  ;; (js/console.log (.abort controller))
   (start))
 
 ;; this is called before any code is reloaded

@@ -5,7 +5,7 @@
   "src/test"]
 
 
- :deps {:aliases [:cljs]}
+ :deps {:aliases [:cljs :test]}
 ;; :dependencies []
 
  :dev-http
@@ -16,7 +16,14 @@
   {:target :browser
    :output-dir "public/js"
    :asset-path "/js"
-
    :modules
    {:main ; becomes public/js/main.js
-    {:init-fn starter.browser/init}}}}}
+    {:init-fn starter.browser/init}}}
+  :test-kaocha 
+  {:target    :browser-test
+   :runner-ns kaocha.cljs2.shadow-runner
+   :test-dir  "target/kaocha-test"
+   :ns-regexp ".*-test$"
+   :devtools {:http-port 1818
+              :http-root "target/kaocha-test"
+              :preloads [lambdaisland.chui.remote]}}}}

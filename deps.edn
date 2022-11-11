@@ -7,5 +7,9 @@
  :aliases
  {:cljs
   {:extra-deps {thheller/shadow-cljs {:mvn/version "2.20.7"}}}
-   }}
+  :test 
+  {:extra-paths ["test"]
+   :extra-deps {lambdaisland/kaocha {:mvn/version "1.71.1119"}
+                io.github.lambdaisland/kaocha-cljs2 {:git/sha "2a1cb479e553a298400d5e6171738629f0167455"
+                                           #_:mvn/version #_"0.0.35"}}} }}
 
