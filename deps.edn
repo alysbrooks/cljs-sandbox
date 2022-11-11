@@ -1,0 +1,11 @@
+
+{:paths ["src/dev"
+         "src/main"
+         "src/test"]
+
+ :deps {io.github.kuhumcst/fetch {:git/sha "7130b9542c261001a6f40408c5d7e9f8641895aa"}}
+ :aliases
+ {:cljs
+  {:extra-deps {thheller/shadow-cljs {:mvn/version "2.20.7"}}}
+   }}
+
