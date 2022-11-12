@@ -1,16 +1,13 @@
 
 #kaocha/v1
 {:plugins [:kaocha.plugin/hooks]
- :tests [#_{:type :kaocha.type/cljs2
-          :test-paths ["test"]
-          :src-paths ["src"]
-          :id :cljs}
-         {:type :kaocha.type/cljs2
+;;  :reporter kaocha.report/documentation
+ :tests [{:type :kaocha.type/cljs2
           :shadow/build-id     :test-kaocha
           :browse-url          "http://localhost:8000"
           :kaocha.hooks/before [shadow-cljs-hook/before-hook]
-          :id :cljs
-          }
-         {:test-paths ["test"]
+          :id :cljs}
+         {:type :kaocha.type/clojure.test
+          :test-paths ["test"]
           :src-paths ["src"]
           :id :clj}]}

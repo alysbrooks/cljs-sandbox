@@ -3,5 +3,5 @@
 
 
 (deftest simple-test4
-  (testing "simple test"
+  (testing "a simple server test"
     (is (= 1 1))))
