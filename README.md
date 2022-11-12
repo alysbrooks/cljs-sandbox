@@ -1,6 +1,8 @@
-# shadow-cljs - browser quickstart
+# CLJS sandbox
 
-This is a minimum template you can use as the basis for CLJS projects intended to run in the browser.
+Sample CLJS project for my own testing purposes. Includes a working setup of
+kaocha-cljs2. Forked from [this template](https://github.com/shadow-cljs/quickstart-browser.git)
+
 
 ## Required Software
 
@@ -9,9 +11,7 @@ This is a minimum template you can use as the basis for CLJS projects intended t
 
 ## User Guide
 
-This repository only shows a basic example of how to get a basic Browser build.
-
-Please refer to the full [User Guide](https://shadow-cljs.github.io/docs/UsersGuide.html) for more information.
+Please refer to the full [Shadow-cljs User Guide](https://shadow-cljs.github.io/docs/UsersGuide.html) for more information.
 
 
 ## Running the Example
@@ -40,60 +40,6 @@ When you see a "Build completed." message your build is ready to be used.
 ```
 
 You can now then open [http://localhost:8020](http://localhost:8020).
-
-The app is only a very basic skeleton with the most useful development tools configured.
-
-`shadow-cljs` is configured by the `shadow-cljs.edn` config. It looks like this:
-
-```clojure
-;; shadow-cljs configuration
-{:source-paths ; .cljs files go here
- ["src/dev"
-  "src/main"
-  "src/test"] 
-
- :dependencies ; covered later
- [] 
-
- :dev-http ; starts a http dev server on http://localhost:8020 and serves `public`
- {8020 "public"}
-
- :builds
- {:app ; build identifier
-  {:target :browser
-   :output-dir "public/js"
-   :asset-path "/js"
-
-   :modules
-   {:main ; becomes public/js/main.js
-    {:init-fn starter.browser/init}}}}}
-
-```
-
-It defines the `:app` build with the `:target` set to `:browser`. All output will be written to `public/js` which is a path relative to the project root (ie. the directory the `shadow-cljs.edn` config is in).
-
-`:modules` defines the how the output should be bundled together. For now we just want one file. The `:main` module will be written to `public/js/main.js`, it will include the code from the `:entries` and all their dependencies.
-
-The last part is the actual `index.html` that is loaded when you open `http://localhost:8020`. It loads the generated `/js/main.js` and then calls `start.browser.init` which we defined in the `src/main/start/browser.cljs`.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
-    <title>Browser Starter</title>
-</head>
-<body>
-<h1>shadow-cljs - Browser</h1>
-<div id="app"></div>
-<noscript>You need to enable JavaScript to run this app.</noscript>
-<script src="/js/main.js"></script>
-</body>
-</html>
-```
 
 ## Live reload
 
